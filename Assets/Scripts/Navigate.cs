@@ -17,7 +17,7 @@ public class Navigate : MonoBehaviour
     {
         // if map is open pressing e will close it
         // if map is closed pressing e will open it
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (mapOpen == false)
             {
