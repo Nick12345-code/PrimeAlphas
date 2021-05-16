@@ -2625,7 +2625,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f53f4c19184b745bd651d988dadd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensePrefab: {fileID: 1047248694935663776, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
+  defencePrefab: {fileID: 1047248694935663776, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
   mainCamera: {fileID: 913679650}
   topDownCamera: {fileID: 252842508}
   angledCamera: {fileID: 1741215588}
