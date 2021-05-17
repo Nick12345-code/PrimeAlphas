@@ -10,8 +10,8 @@ public class MapObject : MonoBehaviour
     void Start()
     {
         Vector3 mapPos = transform.position;
-        mapPos.y = 0.1f;
-        mapPos.x += 60f;
+        mapPos.y = 0.5f;
+        mapPos.x -= 60f;
 
         GameObject newObject;
         newObject = Instantiate(iconPrefab, mapPos, Quaternion.identity);

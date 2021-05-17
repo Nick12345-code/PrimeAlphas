@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1047248694935663781}
   - component: {fileID: 1047248694935663778}
   - component: {fileID: 1047248694935663779}
-  - component: {fileID: -1213424536342179371}
   m_Layer: 0
   m_Name: SphereBomb
   m_TagString: Untagged
@@ -96,16 +95,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1213424536342179371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047248694935663776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6899cbfa49d96242994b59f0c674c2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iconPrefab: {fileID: 6059705184652086473, guid: ad01722a63aa9a447be0c4d5ee70ee5a, type: 3}

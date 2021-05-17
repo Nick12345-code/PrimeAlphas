@@ -13,7 +13,7 @@ public class Level : MonoBehaviour
 
     Vector3 defensePos = new Vector3(2.25f, 0.5f, 3f);
     int objectID = 1;
-    int cameraID = 1;
+    public static int cameraID = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             defensePos.z = objectID * 1.2f;
 
@@ -38,7 +38,7 @@ public class Level : MonoBehaviour
             objectID++;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             //GameObject[] objectPair = GameObject.FindGameObjectsWithTag((objectID - 1).ToString("D3")); //string.Format("{0}", 
             GameObject.Find((objectID - 1).ToString("D3")); //string.Format("{0}", 
@@ -53,7 +53,10 @@ public class Level : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (cameraID == 3) { cameraID = 1; } else { cameraID++; }
+            // Uncomment last "else if" and change commented lines to re-enable CameraTopDown or
+            // CameraISO (also re-enable the game objects and reassign variables in Inspector).
+
+            if (cameraID == 2) { cameraID = 1; } else { cameraID++; } // if (cameraID == 3)
 
             if (cameraID == 1)
             {
@@ -64,15 +67,15 @@ public class Level : MonoBehaviour
             else if (cameraID == 2)
             {
                 mainCamera.enabled = false;
-                topDownCamera.enabled = true;
-                angledCamera.enabled = false;
+                topDownCamera.enabled = false; // true;
+                angledCamera.enabled = true; // false;
             }
-            else if (cameraID == 3)
-            {
-                mainCamera.enabled = false;
-                topDownCamera.enabled = false;
-                angledCamera.enabled = true;
-            }
+            //else if (cameraID == 3)
+            //{
+            //    mainCamera.enabled = false;
+            //    topDownCamera.enabled = false;
+            //    angledCamera.enabled = true;
+            //}
         }
     }
 }
