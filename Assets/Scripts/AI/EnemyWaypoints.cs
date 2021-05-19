@@ -9,6 +9,8 @@ namespace AIBehaviour
     {
         public Vector3 Position => transform.position;
 
+        //public int waypointID;
+
         private void OnDrawGizmos()
         {
 
