@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     Vector3 zoomStep = new Vector3(0,-0.5f, -0.5f);
     public Camera childCamera;
 
+    public Collider mapCollider;
     public GameObject defencePrefab;
     Vector3 defensePos;
 
@@ -71,6 +72,7 @@ public class CameraMovement : MonoBehaviour
                 newPos = transform.parent.position + mouseStartPos - mouseCurrentPos;
             }
         }
+
         if (Input.mouseScrollDelta.y != 0)
         {
             newZoom += Input.mouseScrollDelta.y * zoomStep * 20;
@@ -150,8 +152,10 @@ public class CameraMovement : MonoBehaviour
             newRot *= Quaternion.Euler(Vector3.up * -rotateStep);
         }
 
-        transform.parent.position = Vector3.Lerp(transform.parent.position, newPos, Time.deltaTime * moveTime);
+        newPos = new Vector3(Mathf.Clamp(newPos.x, 55, 81), newPos.y, Mathf.Clamp(newPos.z, -2, 31));
 
+        transform.parent.position = Vector3.Lerp(transform.parent.position, newPos, Time.deltaTime * moveTime);
+        
         transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * moveTime);
 
         childCamera.transform.localPosition = Vector3.Lerp(childCamera.transform.localPosition, newZoom, Time.deltaTime * moveTime);
