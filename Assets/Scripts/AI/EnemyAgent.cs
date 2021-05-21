@@ -11,8 +11,8 @@ namespace AIBehaviour
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyAgent : MonoBehaviour
     {
-        private NavMeshAgent agentEnemy;
-        private EnemyWaypoints[] waypoints;
+        public NavMeshAgent agentEnemy;
+        public EnemyWaypoints[] waypoints;
         //private EnemyWaypoints[] currentWaypoint;
 
         //private Transform[] setWaypoint;
