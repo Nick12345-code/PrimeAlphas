@@ -2,15 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
-    private bool automaticShooting = true;
-
-    private void Start()
-    {
-        StartCoroutine(AutomaticShooting());
-    }
-
     public void Shoot()
     {
         RaycastHit hitInfo;
@@ -24,15 +17,5 @@ public class Shooting : MonoBehaviour
                 print("enemy is damaged");
             }
         }
-    }
-
-    public IEnumerator AutomaticShooting()
-    {
-        while (automaticShooting)
-        {
-            Shoot();
-        }
-
-        yield return new WaitForSeconds(2);
     }
 }
