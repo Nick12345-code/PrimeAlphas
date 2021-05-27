@@ -23,8 +23,7 @@ namespace AIBehaviour
         private EnemyWaypoints destination => waypoints[waypoints.Length];
 
 
-
-
+        //public float aiSpeed;
 
 
         // Start is called before the first frame update
@@ -35,6 +34,7 @@ namespace AIBehaviour
             waypoints = FindObjectsOfType<EnemyWaypoints>();
             waypoints = waypoints.OrderBy(waypoint => waypoint.name).ToArray();
             StartCoroutine(Move());
+            //agentEnemy.speed = aiSpeed;
 
         }
         #region Old Function
