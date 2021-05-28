@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private Transform target;
+
+    public void Aim()
+    {
+        transform.LookAt(target);
+        print("Aiming At Enemy!");
+    }
+
     public void Shoot()
     {
         RaycastHit hitInfo;
