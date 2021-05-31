@@ -11,8 +11,8 @@ namespace AIBehaviour
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyAgent : MonoBehaviour
     {
-        private NavMeshAgent agentEnemy;
-        private EnemyWaypoints[] waypoints;
+        public NavMeshAgent agentEnemy;
+        public EnemyWaypoints[] waypoints;
         //private EnemyWaypoints[] currentWaypoint;
 
         //private Transform[] setWaypoint;
@@ -23,8 +23,7 @@ namespace AIBehaviour
         private EnemyWaypoints destination => waypoints[waypoints.Length];
 
 
-
-
+        //public float aiSpeed;
 
 
         // Start is called before the first frame update
@@ -35,6 +34,7 @@ namespace AIBehaviour
             waypoints = FindObjectsOfType<EnemyWaypoints>();
             waypoints = waypoints.OrderBy(waypoint => waypoint.name).ToArray();
             StartCoroutine(Move());
+            //agentEnemy.speed = aiSpeed;
 
         }
         #region Old Function
