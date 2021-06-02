@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private Transform target;
+    [SerializeField] private float range = 10;
+
+    private void Start()
+    {
+        target = GameObject.Find("TestEnemy").GetComponent<Transform>();
+    }
+
+    public void Attack()
+    {
+        if (Vector3.Distance(transform.position, target.transform.position) < range)
+        {
+            Aim();
+            Shoot();
+        }
+    }
 
     public void Aim()
     {
         transform.LookAt(target);
-        print("Aiming At Enemy!");
     }
 
     public void Shoot()
@@ -26,4 +40,5 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+
 }

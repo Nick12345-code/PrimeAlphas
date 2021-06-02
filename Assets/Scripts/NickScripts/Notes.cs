@@ -1,4 +1,4 @@
-// minimap style blueprint of level
+// minimap style blueprint of level DONE
 
 // add weapons to spawned tower objects
 

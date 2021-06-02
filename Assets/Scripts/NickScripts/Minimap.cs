@@ -5,6 +5,7 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     [SerializeField] private GameObject minimap;
+    public static bool input = true;
 
     private void Update()
     {
@@ -13,10 +14,12 @@ public class Minimap : MonoBehaviour
         {
             if (minimap.activeSelf)
             {
+                input = false;
                 minimap.SetActive(false);
             }
             else
             {
+                input = true;
                 minimap.SetActive(true);
             }
         }

@@ -9,11 +9,10 @@ public class AutomaticWeapon : Weapon
 
     private void Update()
     {
-        Aim();
         if (Time.time - lastFire > 1 / fireRate)
         {
             lastFire = Time.time;
-            Shoot();
+            Attack();
         }
     }
 }

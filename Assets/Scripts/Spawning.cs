@@ -4,17 +4,43 @@ using UnityEngine;
 
 public class Spawning : MonoBehaviour
 {
-    public GameObject towerPrefab;
-    public GameObject spawnPoint;
+    [SerializeField] private GameObject towerPrefab;
+    [SerializeField] private Camera cam;
+    [SerializeField] private int towers;
+
+    private void Start()
+    {
+        towers = 0;
+    }
 
     private void Update()
     {
-        // if left mouse button is pressed a gameobject is spawned at the position of the spawnPoint gameobject
-        if (Input.GetButtonDown("Fire1")) 
+        if (Input.GetButtonDown("Fire1"))
         {
-            GameObject b = Instantiate(towerPrefab, spawnPoint.transform) as GameObject;
-            b.transform.position = spawnPoint.transform.position;
-            b.transform.SetParent(spawnPoint.transform);
+            Ray ray;
+            RaycastHit hit;
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Debug.DrawRay(cam.transform.position, forward, Color.red, 100);
+            if (Physics.Raycast(ray, out hit, 100.0f))
+            {
+                if (hit.collider.CompareTag("Ground"))
+                {
+                    if (towers >= 10)
+                    {
+                        print("Tower limit reached!");
+                    }
+                    else
+                    {
+                        GameObject a = Instantiate(towerPrefab, hit.transform.position, Quaternion.identity) as GameObject;
+                        towers++;
+                    }
+                }
+                else
+                {
+                    print("You can't spawn towers here!");
+                }
+            }
         }
     }
 }
