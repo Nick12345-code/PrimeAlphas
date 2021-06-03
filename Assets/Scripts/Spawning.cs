@@ -22,7 +22,7 @@ public class Spawning : MonoBehaviour
             ray = cam.ScreenPointToRay(Input.mousePosition);
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Debug.DrawRay(cam.transform.position, forward, Color.red, 100);
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Physics.Raycast(ray, out hit, 1000.0f))
             {
                 if (hit.collider.CompareTag("Ground"))
                 {
@@ -32,7 +32,9 @@ public class Spawning : MonoBehaviour
                     }
                     else
                     {
+                        print("Tower spawned!");
                         GameObject a = Instantiate(towerPrefab, hit.transform.position, Quaternion.identity) as GameObject;
+                        a.transform.SetParent()
                         towers++;
                     }
                 }

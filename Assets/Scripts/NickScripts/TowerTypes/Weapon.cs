@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private Transform target;
+    [Header("Base Weapon System")]
+    private GameObject target;
     [SerializeField] private float range = 10;
 
     private void Start()
     {
-        target = GameObject.Find("TestEnemy").GetComponent<Transform>();
+        target = GameObject.FindWithTag("Enemy");
     }
 
     public void Attack()
     {
-        if (Vector3.Distance(transform.position, target.transform.position) < range)
+        if (target != null)
         {
-            Aim();
-            Shoot();
+            if (Vector3.Distance(transform.position, target.transform.position) < range)
+            {
+                Aim();
+                Shoot();
+            }
         }
     }
 
     public void Aim()
     {
-        transform.LookAt(target);
+        transform.LookAt(target.transform);
     }
 
     public void Shoot()
@@ -36,7 +40,8 @@ public class Weapon : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                print("enemy is damaged");
+                Enemy enemyScript = hitInfo.transform.GetComponent<Enemy>(); 
+                enemyScript.TakeDamage(10);
             }
         }
     }

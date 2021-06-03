@@ -1670,7 +1670,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16470
+  m_Name: pb_Mesh16462
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1851,7 +1851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9056677083448992034, guid: 81562ed04529e28489ad46399422c9cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.66935873
+      value: 1.508
       objectReference: {fileID: 0}
     - target: {fileID: 9056677083448992034, guid: 81562ed04529e28489ad46399422c9cb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2390,7 +2390,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16202
+  m_Name: pb_Mesh16194
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6362,11 +6362,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016625042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.35, y: 0, z: 11.029592}
-  m_LocalScale: {x: 0.3134669, y: 1, z: 1}
+  m_LocalPosition: {x: 1.35, y: 0.211, z: 8.4356}
+  m_LocalScale: {x: 0.21231967, y: 1, z: 1.7986311}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025011067
 GameObject:
@@ -6464,6 +6464,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1033520886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1033520886, guid: 81562ed04529e28489ad46399422c9cb, type: 3}
+  m_PrefabInstance: {fileID: 251636811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1097680026
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,52 +7218,6 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
---- !u!1 &1502389144
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1502389146}
-  - component: {fileID: 1502389145}
-  m_Layer: 0
-  m_Name: SpawnMotor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1502389145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502389144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ebb41b7c942534db25438335110e9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 1047248694935663776, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
-  cam: {fileID: 1977494754}
-  towers: 0
---- !u!4 &1502389146
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502389144}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520592967
 GameObject:
   m_ObjectHideFlags: 0
@@ -12483,9 +12448,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 802052130, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
-      propertyPath: target
+      propertyPath: healthBar
       value: 
-      objectReference: {fileID: 9056677083448992034, guid: 81562ed04529e28489ad46399422c9cb, type: 3}
+      objectReference: {fileID: 1033520886}
     - target: {fileID: 1047248694935663776, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
       propertyPath: m_Name
       value: SphereBomb
@@ -13816,6 +13781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1977494752}
   - component: {fileID: 1977494754}
+  - component: {fileID: 1977494753}
   m_Layer: 5
   m_Name: Camera
   m_TagString: Untagged
@@ -13842,6 +13808,21 @@ RectTransform:
   m_AnchoredPosition: {x: -395.4736, y: -146.90009}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1977494753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977494751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ebb41b7c942534db25438335110e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 1047248694935663776, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
+  cam: {fileID: 1977494754}
+  towers: 0
 --- !u!20 &1977494754
 Camera:
   m_ObjectHideFlags: 0
@@ -13869,7 +13850,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 17.04
+  orthographic size: 21.42
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
