@@ -87,6 +87,7 @@ namespace AIBehaviour
             {
                 Destroy(gameObject);
             }
+
         }
 
     }
