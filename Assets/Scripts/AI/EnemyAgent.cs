@@ -97,7 +97,7 @@ namespace AIBehaviour
                 agentEnemy.SetDestination(waypoints[currentWaypoint++].Position);
 
                 // then wait until its not pending a path, and it's remaining distance is less than < .1f
-                yield return new WaitUntil(() => !agentEnemy.pathPending && agentEnemy.remainingDistance < 0.1f); 
+                yield return new WaitUntil(() => !agentEnemy.pathPending && agentEnemy.remainingDistance < 0.5f); 
             }
         }
 
