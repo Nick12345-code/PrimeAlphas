@@ -6316,7 +6316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9969d5ba5db4cf94f86fe64efa55ec44, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9969d5ba5db4cf94f86fe64efa55ec44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20090,17 +20090,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 884783434}
   m_IsSelectable: 1
-  m_SelectedFaces: 98000000
-  m_SelectedEdges:
-  - a: 658
-    b: 659
-  - a: 660
-    b: 658
-  - a: 659
-    b: 661
-  - a: 661
-    b: 660
-  m_SelectedVertices: 92020000930200009402000095020000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!4 &2035156300
 Transform:
   m_ObjectHideFlags: 0
@@ -20192,7 +20184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8053926647611734792, guid: ad01722a63aa9a447be0c4d5ee70ee5a, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8053926647611734792, guid: ad01722a63aa9a447be0c4d5ee70ee5a, type: 3}
       propertyPath: m_LocalPosition.x
