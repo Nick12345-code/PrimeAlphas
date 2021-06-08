@@ -86,7 +86,12 @@ public class CameraMovement : MonoBehaviour
             spinCurrentPos = Input.mousePosition;
             Vector3 difference = spinStartPos - spinCurrentPos;
             spinStartPos = spinCurrentPos;
+            //Debug.Log("ROTATE UP: " + Vector3.left * (-difference.y / 100f));
+            //newRot *= Quaternion.Euler(Vector3.left * (-difference.y / 100f));
+            //Debug.Log("newRot UP: " + newRot);
+            //Debug.Log("SPIN: " + Vector3.up * (-difference.x / 5f));
             newRot *= Quaternion.Euler(Vector3.up * (-difference.x / 5f));
+            //Debug.Log("newRot: " + newRot);
         }
         if (Input.GetMouseButtonDown(1))
         {
