@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// this is for spawning towers onto the map
 public class Spawning : MonoBehaviour
 {
     [SerializeField] private GameObject towerPrefab;
     [SerializeField] private Camera cam;
     [SerializeField] private int towers;
+    [SerializeField] private GameObject towerHolder;
 
     private void Start()
     {
@@ -15,16 +17,16 @@ public class Spawning : MonoBehaviour
 
     private void Update()
     {
+        // if the left mouse button is clicked a raycast is shot from the camera and if it hits the 'ground' it will spawn a tower if the following conditions are met
         if (Input.GetButtonDown("Fire1"))
         {
             Ray ray;
             RaycastHit hit;
             ray = cam.ScreenPointToRay(Input.mousePosition);
             Vector3 forward = transform.TransformDirection(Vector3.forward);
-            Debug.DrawRay(cam.transform.position, forward, Color.red, 100);
             if (Physics.Raycast(ray, out hit, 1000.0f))
             {
-                if (hit.collider.CompareTag("Ground"))
+                if (hit.collider.name == "Ground")
                 {
                     if (towers >= 10)
                     {
@@ -33,8 +35,8 @@ public class Spawning : MonoBehaviour
                     else
                     {
                         print("Tower spawned!");
-                        GameObject a = Instantiate(towerPrefab, hit.transform.position, Quaternion.identity) as GameObject;
-                        //a.transform.SetParent();
+                        GameObject a = Instantiate(towerPrefab, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity) as GameObject;
+                        a.transform.SetParent(towerHolder.transform);
                         towers++;
                     }
                 }

@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        print("Enemy Killed!");
+        Energy.energy += 20;
         Destroy(this.gameObject);
     }
 }
