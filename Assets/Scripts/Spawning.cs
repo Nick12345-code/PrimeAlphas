@@ -34,7 +34,7 @@ public class Spawning : MonoBehaviour
                     {
                         print("Tower spawned!");
                         GameObject a = Instantiate(towerPrefab, hit.transform.position, Quaternion.identity) as GameObject;
-                        a.transform.SetParent()
+                        //a.transform.SetParent();
                         towers++;
                     }
                 }
