@@ -31,11 +31,35 @@ namespace AIBehaviour
         // Start is called before the first frame update
         void Start()
         {
-            agentEnemy = gameObject.GetComponent<NavMeshAgent>();
-            // FindObjectsOfType gets every instance of this component in the scene
-            waypoints = FindObjectsOfType<EnemyWaypoints>();
-            waypoints = waypoints.OrderBy(waypoint => waypoint.name).ToArray();
-            StartCoroutine(Move());
+            int direction = Random.Range(0,2);
+
+
+            switch (direction)
+            {
+                case 0:
+                    Debug.Log("1");
+                    agentEnemy = gameObject.GetComponent<NavMeshAgent>();
+                    // FindObjectsOfType gets every instance of this component in the scene
+                    waypoints = FindObjectsOfType<EnemyWaypoints>();
+                    waypoints = waypoints.OrderBy(waypoint => waypoint.name).ToArray();
+                    StartCoroutine(Move());
+                    break;
+                case 1:
+                    Debug.Log("2");
+                    agentEnemy = gameObject.GetComponent<NavMeshAgent>();
+                    // FindObjectsOfType gets every instance of this component in the scene
+                    swaypoints = FindObjectsOfType<SecondWaypoint>();
+                    swaypoints = swaypoints.OrderBy(swaypoint => swaypoint.name).ToArray();
+                    StartCoroutine(MoveSecond());
+                    break;
+            }
+                
+
+            //agentEnemy = gameObject.GetComponent<NavMeshAgent>();
+            //// FindObjectsOfType gets every instance of this component in the scene
+            //waypoints = FindObjectsOfType<EnemyWaypoints>();
+            //waypoints = waypoints.OrderBy(waypoint => waypoint.name).ToArray();
+            //StartCoroutine(Move());
             //agentEnemy.speed = aiSpeed;
 
         }
@@ -106,11 +130,11 @@ namespace AIBehaviour
 
         public IEnumerator MoveSecond()
         {
-            while (currentWaypoint < waypoints.Length) // while the current way point value is less than the length of the waypoint array
+            while (currentWaypoint < swaypoints.Length) // while the current way point value is less than the length of the waypoint array
             {
                 //MakeAIMove();
                 // set desination based on waypoint array [ID'ing currentWaypoint then iterate].'s position
-                agentEnemy.SetDestination(waypoints[currentWaypoint++].Position);
+                agentEnemy.SetDestination(swaypoints[currentWaypoint++].Position);
 
                 // then wait until its not pending a path, and it's remaining distance is less than < .1f
                 yield return new WaitUntil(() => !agentEnemy.pathPending && agentEnemy.remainingDistance < 0.5f);

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace AIBehaviour
 {
@@ -16,15 +18,15 @@ namespace AIBehaviour
         public float attack = 100f; // base attack variable for future use
         public bool isAttacking = false;
         public float attackSpeed = 0.1f; // the attack speed variable. The number "should" represent how many times it can attack per second
-
+        [SerializeField] private Image healthBar;
 
 
         //public List<string>   = new List<string>();
 
-        
+
         //private string ;
 
-        
+
         //public NavMeshAgent navAgentSettings; // this may be used to cahnge the AI speed, acceleration in the future
         //public Collider turretCollisions;
 
@@ -60,6 +62,17 @@ namespace AIBehaviour
             }
         }
 
+        public void TakeDamage(float amount)
+        {
+            health -= amount;
+            healthBar.fillAmount = health / startHealth;
+
+            if (health <= 0)
+            {
+                Death();
+            }
+        }
+
         //private void OnTriggerExit(Collider other)
         //{
 
@@ -85,7 +98,9 @@ namespace AIBehaviour
         {
             if(health <= 0)
             {
-                Destroy(gameObject);
+
+                Energy.energy += 20;
+                Destroy(this.gameObject);
             }
 
         }
