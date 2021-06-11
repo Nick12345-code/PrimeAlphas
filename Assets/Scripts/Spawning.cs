@@ -8,6 +8,7 @@ public class Spawning : MonoBehaviour
     [SerializeField] private GameObject towerPrefab;
     [SerializeField] private Camera cam;
     [SerializeField] private int towers;
+    [SerializeField] private int towerLimit = 10;
     [SerializeField] private GameObject towerHolder;
 
     private void Start()
@@ -28,14 +29,15 @@ public class Spawning : MonoBehaviour
             {
                 if (hit.collider.name == "Ground")
                 {
-                    if (towers >= 10)
+                    print(hit.transform.position);
+                    if (towers >= towerLimit)
                     {
                         print("Tower limit reached!");
                     }
                     else
                     {
                         print("Tower spawned!");
-                        GameObject a = Instantiate(towerPrefab, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity) as GameObject;
+                        GameObject a = Instantiate(towerPrefab, hit.transform.position, Quaternion.identity) as GameObject;
                         a.transform.SetParent(towerHolder.transform);
                         towers++;
                     }

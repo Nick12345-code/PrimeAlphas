@@ -6,13 +6,13 @@ public class Weapon : MonoBehaviour
 {
     [Header("Base Weapon System")]
     private GameObject target;
+    [SerializeField] private GameObject raycastObject;
     private float range = 5f;
     public LineRenderer laser;
 
     public void Attack()
     {
         target = GameObject.FindWithTag("Enemy");
-        laser = GameObject.FindWithTag("Turret").GetComponent<LineRenderer>();
 
         if (target != null)
         {
@@ -38,11 +38,11 @@ public class Weapon : MonoBehaviour
         RaycastHit hitInfo;
         Vector3 forward = transform.TransformDirection(Vector3.forward);
 
-        Debug.DrawRay(transform.position, forward, Color.red, 10);
-        if (Physics.Raycast(transform.position, forward, out hitInfo, 10))
+        Debug.DrawRay(raycastObject.transform.position, forward, Color.red, 10);
+        if (Physics.Raycast(raycastObject.transform.position, forward, out hitInfo, 10))
         {
             laser.enabled = true;
-            laser.SetPosition(0, transform.position);
+            laser.SetPosition(0, raycastObject.transform.position);
             laser.SetPosition(1, hitInfo.transform.position);
             if (hitInfo.collider.CompareTag("Enemy"))
             {
