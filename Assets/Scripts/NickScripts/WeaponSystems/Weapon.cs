@@ -14,11 +14,15 @@ public class Weapon : MonoBehaviour
     {
         target = GameObject.FindWithTag("Enemy");
 
+        //FindClosestEnemy();
+
         if (target != null)
         {
+            // if within range
             if (Vector3.Distance(transform.position, target.transform.position) < range)
             {
-                Aim();
+                // look at enemy
+                transform.LookAt(target.transform);
                 Shoot();
             }
             else
@@ -26,11 +30,6 @@ public class Weapon : MonoBehaviour
                 laser.enabled = false;
             }
         }
-    }
-
-    public void Aim()
-    {
-        transform.LookAt(target.transform);
     }
 
     public void Shoot()
@@ -41,15 +40,39 @@ public class Weapon : MonoBehaviour
         Debug.DrawRay(raycastObject.transform.position, forward, Color.red, 10);
         if (Physics.Raycast(raycastObject.transform.position, forward, out hitInfo, 10))
         {
-            laser.enabled = true;
             laser.SetPosition(0, raycastObject.transform.position);
             laser.SetPosition(1, hitInfo.transform.position);
             if (hitInfo.collider.CompareTag("Enemy"))
             {
+                laser.enabled = true;
                 Enemy enemyScript = hitInfo.transform.GetComponent<Enemy>(); 
                 enemyScript.TakeDamage(10);
             }
+            else
+            {
+                laser.enabled = false;
+            }
         }
+    }
+
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject target in gos)
+        {
+            Vector3 diff = target.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = target;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 
 }
