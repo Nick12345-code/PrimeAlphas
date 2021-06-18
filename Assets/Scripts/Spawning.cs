@@ -13,11 +13,15 @@ public class Spawning : MonoBehaviour
     [Header("Equipping")]
     [SerializeField] private List<GameObject> towers = new List<GameObject>();
     [SerializeField] private int currentTowerType;
-
+    [SerializeField] private LayerMask topDownHit;
     private void Start()
     {
         towerAmount = 0;
         currentTowerType = 0;
+
+        //RenderTexture tex;
+        //tex.width = Screen.width;
+        //tex.height = Screen.height;
     }
 
     private void Update()
@@ -48,10 +52,9 @@ public class Spawning : MonoBehaviour
                 Ray ray;
                 RaycastHit hit;
                 ray = cam.ScreenPointToRay(Input.mousePosition);                                                                            
-                if (Physics.Raycast(ray, out hit, 1000.0f))
+                if (Physics.Raycast(ray, out hit, 1000.0f, topDownHit))
                 {
-                    print(Input.mousePosition);
-                    if (hit.collider.name == "Ground")                                                                                         
+                    if (hit.collider.CompareTag("Ground"))                                                                                         
                     {
                         if (towerAmount >= towerLimit)
                         {
@@ -66,19 +69,19 @@ public class Spawning : MonoBehaviour
                                     print("Please select a tower!");
                                     break;
                                 case 1: // SINGLE GUN
-                                    GameObject a = Instantiate(towers[0], hit.transform.position, Quaternion.identity) as GameObject;
+                                    GameObject a = Instantiate(towers[0], hit.point, Quaternion.identity) as GameObject;
                                     a.transform.SetParent(towerHolder.transform);
                                     towerAmount++;
                                     Energy.energy -= 20;
                                     break;
-                                case 2: // DUAL GUN
-                                    GameObject b = Instantiate(towers[1], hit.transform.position, Quaternion.identity) as GameObject;
+                                case 2: // BIG GUN
+                                    GameObject b = Instantiate(towers[1], hit.point, Quaternion.identity) as GameObject;
                                     b.transform.SetParent(towerHolder.transform);
                                     towerAmount++;
                                     Energy.energy -= 40;
                                     break;
-                                case 3: // BIG GUN
-                                    GameObject c = Instantiate(towers[2], hit.transform.position, Quaternion.identity) as GameObject;
+                                case 3: // DUAL GUN
+                                    GameObject c = Instantiate(towers[2], hit.point, Quaternion.identity) as GameObject;
                                     c.transform.SetParent(towerHolder.transform);
                                     towerAmount++;
                                     Energy.energy -= 100;

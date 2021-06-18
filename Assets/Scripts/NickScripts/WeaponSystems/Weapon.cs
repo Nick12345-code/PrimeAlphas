@@ -14,8 +14,6 @@ public class Weapon : MonoBehaviour
     {
         target = GameObject.FindWithTag("Enemy");
 
-        //FindClosestEnemy();
-
         if (target != null)
         {
             // if within range
@@ -54,25 +52,4 @@ public class Weapon : MonoBehaviour
             }
         }
     }
-
-    public GameObject FindClosestEnemy()
-    {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject target in gos)
-        {
-            Vector3 diff = target.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
-            {
-                closest = target;
-                distance = curDistance;
-            }
-        }
-        return closest;
-    }
-
 }
