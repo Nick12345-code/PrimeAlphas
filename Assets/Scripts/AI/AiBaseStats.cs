@@ -65,7 +65,7 @@ namespace AIBehaviour
         public void TakeDamage(float amount)
         {
             health -= amount;
-            healthBar.fillAmount = health / startHealth;
+            //healthBar.fillAmount = health / startHealth;
 
             if (health <= 0)
             {
