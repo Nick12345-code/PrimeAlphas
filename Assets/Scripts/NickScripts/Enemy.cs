@@ -28,7 +28,10 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         print("Enemy Killed!");
-        Energy.energy += 20;
+        if (Energy.energy < Energy.maxEnergy)
+        {
+            Energy.energy += 10f;
+        }
         Destroy(this.gameObject);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     [SerializeField] private GameObject minimap;
-    public static bool input = true;
+    public static bool input = false;
 
     private void Update()
     {

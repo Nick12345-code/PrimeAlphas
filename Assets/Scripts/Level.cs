@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    public GameObject defencePrefab;
+    //public GameObject defencePrefab;
     public Camera mainCamera;
     public Camera topDownCamera;
-    public Camera angledCamera;
+    // public Camera angledCamera;
 
     List<GameObject> currentObjects = new List<GameObject>();
 
@@ -19,7 +19,7 @@ public class Level : MonoBehaviour
     void Start()
     {
         topDownCamera.enabled = false;
-        angledCamera.enabled = false;
+        // angledCamera.enabled = false;
     }
 
     // Update is called once per frame
@@ -27,11 +27,11 @@ public class Level : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            defensePos.z = objectID * 1.2f;
+            //defensePos.z = objectID * 1.2f;
 
-            GameObject newObject;
-            newObject = Instantiate(defencePrefab, defensePos, Quaternion.identity);
-            currentObjects.Add(newObject);
+            //GameObject newObject;
+            //newObject = Instantiate(defencePrefab, defensePos, Quaternion.identity);
+            //currentObjects.Add(newObject);
 
             //newObject.name = newObject.name + "_" + objectID.ToString("D3");
             // newObject.tag = objectID.ToString("D3"); // string.Format("{0}",  )
@@ -62,13 +62,13 @@ public class Level : MonoBehaviour
             {
                 mainCamera.enabled = true;
                 topDownCamera.enabled = false;
-                angledCamera.enabled = false;
+                // angledCamera.enabled = false;
             }
             else if (cameraID == 2)
             {
                 mainCamera.enabled = false;
                 topDownCamera.enabled = false; // true;
-                angledCamera.enabled = true; // false;
+                // angledCamera.enabled = true; // false;
             }
             //else if (cameraID == 3)
             //{
