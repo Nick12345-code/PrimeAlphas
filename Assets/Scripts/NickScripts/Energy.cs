@@ -21,5 +21,6 @@ public class Energy : MonoBehaviour
     private void Update()
     {
         energyText.text = "ENERGY: " + energy.ToString("0");
+        energyBar.value = energy;
     }
 }

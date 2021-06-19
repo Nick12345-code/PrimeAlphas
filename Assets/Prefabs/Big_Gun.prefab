@@ -393,6 +393,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastObject: {fileID: 1637395301097969106}
   laser: {fileID: 1637395300630747280}
+  range: 5
+  fireRate: 0.2
+  damage: 50
 --- !u!1 &2285496713696401247
 GameObject:
   m_ObjectHideFlags: 0
