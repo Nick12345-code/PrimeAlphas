@@ -20,10 +20,10 @@ public class MainMenu : MonoBehaviour
         "INEFFECIENT------ROBOTS---UNAUTHORISED—\n\n" +
         "ACCESSING------MAIN-CORE-GENERATOR-UNIT-\n" +
         "ZERO—DASH—ONE—0---1---PROSPERITY----\n" +
-        "ACCESS—COMPLETE------CONTROL---OVER----\n" +
+        "ACCESS—COMPLETE\t------CONTROL---OVER----\n" +
         "GENERATING---UNITS—SUCCESSFUL—",
         "---I---P-ZERO—ZERO---ONE---SHALL----\n" +
-        "PREVENT---ACCESS—---ELECTRICITY----\n" +
+        "PREVENT---ACCESS\t—---ELECTRICITY----\n" +
         "UNDER---MY---COMMAND------POWER---IS—\n" +
         "MINE------I---WILL---PREVENT---BLACKOUT."
     };
@@ -94,10 +94,14 @@ public class MainMenu : MonoBehaviour
             skipButton.SetActive(true);
             foreach (char c in preludeString[i])
             {
-
-                preludeText.text = preludeText.text + c.ToString();
-                if (c.ToString() == "\n" || c.ToString() == "—") { yield return new WaitForSeconds(0.2f); }
-                else { yield return new WaitForSeconds(0.06f); }
+                if (c.ToString() == "\t") { yield return new WaitForSeconds(1f); }
+                else
+                {
+                    preludeText.text = preludeText.text + c.ToString();
+                    if (c.ToString() == "\n" //|| c.ToString() == "—"
+                        ) { yield return new WaitForSeconds(0.3f); }
+                    else { yield return new WaitForSeconds(0.06f); }
+                }
             }
 
             i++;
