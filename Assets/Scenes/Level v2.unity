@@ -6460,10 +6460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f53f4c19184b745bd651d988dadd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defencePrefab: {fileID: 1047248694935663776, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
   mainCamera: {fileID: 913679650}
   topDownCamera: {fileID: 252842508}
-  angledCamera: {fileID: 201261216}
 --- !u!1 &976139603
 GameObject:
   m_ObjectHideFlags: 0
