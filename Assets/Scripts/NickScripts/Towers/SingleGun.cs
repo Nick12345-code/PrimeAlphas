@@ -12,30 +12,33 @@ public class SingleGun : MonoBehaviour
     [SerializeField] private float range;                                               
     [SerializeField] private float fireRate;                                              
     private float lastFire = 0.5f;
-    [SerializeField] private int damage;                                                   
+    [SerializeField] private int damage;
+    [SerializeField] private int speed;
     
     private void Update()
     {
         if (Time.time - lastFire > 1 / fireRate)                                                // fires every 0.5 seconds                                            
         {
             lastFire = Time.time;
-            target = GameObject.FindWithTag("Enemy");                                           // target set to enemies
+            //target = GameObject.FindWithTag("Enemy");  
+            target = FindClosestEnemy();
+            // target set to enemies
 
             if (target != null)                                                                 // if enemy exists
             {
                 if (Vector3.Distance(transform.position, target.transform.position) < range)    // if within range
-                {                  
-                    transform.LookAt(target.transform);                                         // look at enemy
+                {
+                    laser.enabled = true;
+                    //transform.LookAt(target.transform);                                         // look at enemy
+                    Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+                
                     Shoot();                                                                    // shoot
                 }
                 else
                 {
                     laser.enabled = false;                                                      // laser disabled if enemy not in range
                 }
-            }
-            else
-            {
-                laser.enabled = false;                                                          // laser disabled if enemy doesn't exist
             }
         }
     }
@@ -60,5 +63,25 @@ public class SingleGun : MonoBehaviour
                 laser.enabled = false;                                                          // if laser doesn't hit an enemy, laser is disabled
             }
         }
+    }
+
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 }

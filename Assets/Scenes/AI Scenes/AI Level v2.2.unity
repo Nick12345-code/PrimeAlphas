@@ -1993,7 +1993,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26928
+  m_Name: pb_Mesh23806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5111,10 +5111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f53f4c19184b745bd651d988dadd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defencePrefab: {fileID: 1047248694935663776, guid: b02bcee7d41109144b5a7f4c20a5e144, type: 3}
   mainCamera: {fileID: 913679650}
   topDownCamera: {fileID: 252842508}
-  angledCamera: {fileID: 201261216}
 --- !u!1 &942114348
 GameObject:
   m_ObjectHideFlags: 0
@@ -11605,7 +11603,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-14548
+  m_Name: pb_Mesh-5494
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12134,3 +12132,4 @@ MonoBehaviour:
   attack: 2
   isAttacking: 0
   attackSpeed: 0
+  healthBar: {fileID: 0}
