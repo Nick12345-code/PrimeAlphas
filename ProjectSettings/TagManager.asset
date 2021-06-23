@@ -6,10 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Turret
-  - Ground
-  - BigGun
-  - SingleGun
-  - DualGun
+  - Objective
   layers:
   - Default
   - TransparentFX
@@ -17,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - TopDownLayer
+  - 
   - 
   - 
   - 
