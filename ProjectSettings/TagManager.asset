@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Turret
   - Ground
+  - BigGun
+  - SingleGun
+  - DualGun
   layers:
   - Default
   - TransparentFX

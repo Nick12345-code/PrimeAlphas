@@ -48,7 +48,7 @@ public class Spawning : MonoBehaviour
         #region Spawning Towers
         if (Minimap.input == true)
         {
-            if (Input.GetButtonDown("Fire1"))                                                                                                  
+            if (Input.GetButtonDown("Fire1") && !Input.GetKey(KeyCode.LeftShift))                                                                                                  
             {
                 Ray ray;
                 RaycastHit hit;

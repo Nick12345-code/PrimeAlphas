@@ -222,9 +222,10 @@ GameObject:
   - component: {fileID: 1239487312350429031}
   - component: {fileID: 2782187395147051202}
   - component: {fileID: 106019275111646216}
+  - component: {fileID: -7774285369315357411}
   m_Layer: 0
   m_Name: Big_Gun
-  m_TagString: Turret
+  m_TagString: BigGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,6 +295,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &-7774285369315357411
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907375082518373853}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45000008
+  m_Center: {x: 0.000000014901161, y: 0.15144506, z: -0.000000029802322}
 --- !u!1 &2277930399826306584
 GameObject:
   m_ObjectHideFlags: 0

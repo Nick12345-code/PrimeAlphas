@@ -9050,6 +9050,7 @@ Transform:
   m_Children:
   - {fileID: 472677210}
   - {fileID: 86156980}
+  - {fileID: 990436683}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10409,6 +10410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639767041}
   - component: {fileID: 639767042}
+  - component: {fileID: 639767043}
   m_Layer: 0
   m_Name: Spawning
   m_TagString: Untagged
@@ -10456,6 +10458,19 @@ MonoBehaviour:
     m_Bits: 64
   tips: {fileID: 1382532449}
   tipsTextAnim: {fileID: 0}
+--- !u!114 &639767043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639767040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3ac35279d760f459668ecfe6d2c3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1977494754}
 --- !u!1 &652820960
 GameObject:
   m_ObjectHideFlags: 0
@@ -10765,15 +10780,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 601929766}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 68e1bd3599eea2f42aa9638783497ae8, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e1bd3599eea2f42aa9638783497ae8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 1.6500244
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e1bd3599eea2f42aa9638783497ae8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10797,7 +10812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e1bd3599eea2f42aa9638783497ae8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e1bd3599eea2f42aa9638783497ae8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11504,6 +11519,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959631500}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &990436683 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68e1bd3599eea2f42aa9638783497ae8, type: 3}
+  m_PrefabInstance: {fileID: 876760727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &999914022
 GameObject:
   m_ObjectHideFlags: 0

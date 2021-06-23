@@ -658,9 +658,10 @@ GameObject:
   - component: {fileID: 1667611133277686786}
   - component: {fileID: 2345056991569757095}
   - component: {fileID: 535831191327029101}
+  - component: {fileID: 8009994461733940418}
   m_Layer: 0
   m_Name: Dual_Gun
-  m_TagString: Untagged
+  m_TagString: DualGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -730,6 +731,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &8009994461733940418
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048957309156103864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45000008
+  m_Center: {x: 0.000000014901161, y: 0.15144506, z: -0.000000029802322}
 --- !u!1 &2048957309784119567
 GameObject:
   m_ObjectHideFlags: 0
