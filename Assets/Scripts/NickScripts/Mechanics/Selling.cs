@@ -26,12 +26,12 @@ public class Selling : MonoBehaviour
                     else if (hit.collider.name == "Big_Gun(Clone)")
                     {
                         Destroy(hit.collider.gameObject);
-                        Energy.energy += 20;
+                        Energy.energy += 15;
                     }
                     else if (hit.collider.name == "Dual_Gun(Clone)")
                     {
                         Destroy(hit.collider.gameObject);
-                        Energy.energy += 50;
+                        Energy.energy += 25;
                     }
                 }
             } 

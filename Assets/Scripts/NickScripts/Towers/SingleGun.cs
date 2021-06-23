@@ -5,7 +5,7 @@ using UnityEngine;
 public class SingleGun : MonoBehaviour
 {
     [Header("Setup")]
-    private GameObject target;
+    private Transform target;
     [SerializeField] private GameObject raycastObject;
     [SerializeField] private LineRenderer laser;
     [Header("Single Gun Stats")]
@@ -21,7 +21,7 @@ public class SingleGun : MonoBehaviour
         {
             lastFire = Time.time;
             //target = GameObject.FindWithTag("Enemy");  
-            target = FindClosestEnemy();
+            //target = FindClosestEnemy();
             // target set to enemies
 
             if (target != null)                                                                 // if enemy exists
@@ -30,9 +30,8 @@ public class SingleGun : MonoBehaviour
                 {
                     laser.enabled = true;
                     //transform.LookAt(target.transform);                                         // look at enemy
-                    Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
-                
+                    transform.LookAt(new Vector3(target.position.x, target.position.y, target.position.z));
+
                     Shoot();                                                                    // shoot
                 }
                 else
@@ -65,23 +64,4 @@ public class SingleGun : MonoBehaviour
         }
     }
 
-    public GameObject FindClosestEnemy()
-    {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject go in gos)
-        {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
-            {
-                closest = go;
-                distance = curDistance;
-            }
-        }
-        return closest;
-    }
 }

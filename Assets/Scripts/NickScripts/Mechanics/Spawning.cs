@@ -65,7 +65,7 @@ public class Spawning : MonoBehaviour
                         switch (currentTowerType)
                         {
                             case 1: // SINGLE GUN
-                                if (Energy.energy >= 20)
+                                if (Energy.energy >= 40) // need at least 20 energy left over
                                 {
                                     GameObject a = Instantiate(towers[0], hit.point, Quaternion.identity) as GameObject;
                                     a.transform.SetParent(towerHolder.transform);
@@ -78,12 +78,12 @@ public class Spawning : MonoBehaviour
                                 }
                                 break;
                             case 2: // BIG GUN
-                                if (Energy.energy >= 40)
+                                if (Energy.energy >= 50) // need at least 20 energy left over
                                 {
                                     GameObject b = Instantiate(towers[1], hit.point, Quaternion.identity) as GameObject;
                                     b.transform.SetParent(towerHolder.transform);
                                     towerAmount++;
-                                    Energy.energy -= 40; 
+                                    Energy.energy -= 30; 
                                 }
                                 else
                                 {
@@ -91,12 +91,12 @@ public class Spawning : MonoBehaviour
                                 }
                                 break;
                             case 3: // DUAL GUN
-                                if (Energy.energy >= 100)
+                                if (Energy.energy >= 70) // need at least 20 energy left over
                                 {
                                     GameObject c = Instantiate(towers[2], hit.point, Quaternion.identity) as GameObject;
                                     c.transform.SetParent(towerHolder.transform);
                                     towerAmount++;
-                                    Energy.energy -= 100; 
+                                    Energy.energy -= 50; 
                                 }
                                 else
                                 {
