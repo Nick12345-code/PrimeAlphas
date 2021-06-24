@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Energy : MonoBehaviour
 {
@@ -22,5 +23,10 @@ public class Energy : MonoBehaviour
     {
         energyText.text = "ENERGY: " + energy.ToString("0");
         energyBar.value = energy;
+
+        if (energy <= 0)
+        {
+            SceneManager.LoadScene("Lose");
+        }
     }
 }

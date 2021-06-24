@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3b448782874f0234ca3216050186d0c0, type: 2}
+  - {fileID: 2100000, guid: 51174efc6a3e5f4449d3f5460441a89c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,14 +191,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  range: 5
+  range: 7
   fireRate: 1
   fireCountdown: 0
-  damage: 10
   enemyTag: Enemy
   gimbal: {fileID: 6669542736780734697}
   turnSpeed: 10
-  laser: {fileID: 6669542737049656783}
   firePoint: {fileID: 6669542736563395558}
   bulletPrefab: {fileID: 3940947057608640582, guid: 9a3ff9949f071d642a0a32b8ce5b151b, type: 3}
 --- !u!1 &6669542736563395559
@@ -291,7 +289,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3b448782874f0234ca3216050186d0c0, type: 2}
+  - {fileID: 2100000, guid: 51174efc6a3e5f4449d3f5460441a89c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -554,7 +552,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3b448782874f0234ca3216050186d0c0, type: 2}
+  - {fileID: 2100000, guid: 51174efc6a3e5f4449d3f5460441a89c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

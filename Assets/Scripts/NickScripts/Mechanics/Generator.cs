@@ -1,35 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
 {
-    [SerializeField] private float drainSpeed = 0.5f;
-    [SerializeField] private float regenSpeed = 0.1f;
-    [SerializeField] private bool draining = false;
+    [SerializeField] private bool draining = false;                     // if draining is currently happening
+    [SerializeField] private Image damageIndicator;
+    [SerializeField] private Animator damage;
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (other.GetComponent<Collider>().CompareTag("Enemy"))
-        {
-            draining = true;
-            Energy.energy -= 5 * Time.deltaTime * drainSpeed;
-        }     
+        damageIndicator.CrossFadeAlpha(0, 0, false);
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Collider>().CompareTag("Enemy"))
+        if (draining == false)                                          // if draining isn't happening
         {
-            draining = false;
+            if (other.GetComponent<Collider>().CompareTag("Enemy"))     // if it is an enemy collider 
+            {
+                draining = true;                                        // draining is happening
+                damageIndicator.CrossFadeAlpha(1, 1, false);
+            }
         }
     }
 
-    private void Update()
-    {
-        if (Energy.energy < 500 && draining == false)
+    private void OnTriggerExit(Collider other)                          // when collider leaves trigger zone of generator
+    {                                                     
+        if (other.GetComponent<Collider>().CompareTag("Enemy"))     // if it is an enemy collider
         {
-            Energy.energy += 1 * Time.deltaTime * regenSpeed;
-        }
+            damageIndicator.CrossFadeAlpha(0, 1, false);
+            draining = false;                                       // draining isn't happening
+        }       
     }
 }

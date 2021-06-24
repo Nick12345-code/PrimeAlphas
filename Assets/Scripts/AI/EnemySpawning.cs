@@ -73,11 +73,13 @@ namespace AIBehaviour
                 switch (spawnCase)
                 {
                     case 1:
-                        Instantiate(enemy, spawnPos.transform.position, Quaternion.identity);
+                        GameObject a = Instantiate(enemy, spawnPos.transform.position, Quaternion.identity) as GameObject;
+                        a.transform.SetParent(GameObject.Find("Enemies").transform);
                         yield return new WaitForSeconds(spawnRate);
                         break;
                     case 2:
-                        Instantiate(enemyOpp, spawnPos.transform.position, Quaternion.identity);
+                        GameObject b = Instantiate(enemyOpp, spawnPos.transform.position, Quaternion.identity) as GameObject;
+                        b.transform.SetParent(GameObject.Find("Enemies").transform);
                         yield return new WaitForSeconds(spawnRate);
                         break;
                 }

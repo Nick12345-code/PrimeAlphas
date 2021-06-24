@@ -8,10 +8,16 @@ public class Enemy : MonoBehaviour
     public float health;
     public float startHealth = 100f;
     [SerializeField] private Image healthBar;
+    [SerializeField] private Transform sendHereFirst;
 
     private void Start()
     {
         health = startHealth;
+    }
+
+    private void OnEnable()
+    {
+        sendHereFirst = GameObject.Find("SendHereFirst").GetComponent<Transform>();
     }
 
     public void TakeDamage(float amount)
@@ -26,6 +32,12 @@ public class Enemy : MonoBehaviour
     }
 
     public void Die()
+    {
+        transform.position = sendHereFirst.position;
+        Invoke("DestroyEnemy", 2);      
+    }
+
+    public void DestroyEnemy()
     {
         print("Enemy Killed!");
         if (Energy.energy < Energy.maxEnergy)

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class DualGunBullet : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float speed = 70f;
     [SerializeField] private GameObject impactEffect;
+    [SerializeField] private float damage = 5f;
 
     public void Seek(Transform _target)
     {
@@ -40,6 +41,6 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
 
         Enemy enemyScript = target.GetComponent<Enemy>();
-        enemyScript.TakeDamage(10);
+        enemyScript.TakeDamage(damage);
     }
 }

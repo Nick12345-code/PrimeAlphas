@@ -78,12 +78,12 @@ public class Spawning : MonoBehaviour
                                 }
                                 break;
                             case 2: // BIG GUN
-                                if (Energy.energy >= 50) // need at least 20 energy left over
+                                if (Energy.energy >= 70) // need at least 20 energy left over
                                 {
                                     GameObject b = Instantiate(towers[1], hit.point, Quaternion.identity) as GameObject;
                                     b.transform.SetParent(towerHolder.transform);
                                     towerAmount++;
-                                    Energy.energy -= 30; 
+                                    Energy.energy -= 50; 
                                 }
                                 else
                                 {
@@ -91,12 +91,12 @@ public class Spawning : MonoBehaviour
                                 }
                                 break;
                             case 3: // DUAL GUN
-                                if (Energy.energy >= 70) // need at least 20 energy left over
+                                if (Energy.energy >= 90) // need at least 20 energy left over
                                 {
                                     GameObject c = Instantiate(towers[2], hit.point, Quaternion.identity) as GameObject;
                                     c.transform.SetParent(towerHolder.transform);
                                     towerAmount++;
-                                    Energy.energy -= 50; 
+                                    Energy.energy -= 70; 
                                 }
                                 else
                                 {

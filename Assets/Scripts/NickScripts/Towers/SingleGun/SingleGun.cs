@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class SingleGun : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField] private Transform target;              // the enemy locked onto
-    [SerializeField] private float range = 5f;              // range of turret
+    [SerializeField] private float range = 7f;             // range of turret
     [SerializeField] private float fireRate = 1f;           // how fast turret shoots
     [SerializeField] private float fireCountdown = 0f;      // used to calculate firerate
-    [SerializeField] private float damage = 10f;            // damage the turret does to enemies
     [Header("Setup")]
     [SerializeField] private string enemyTag = "Enemy";     // tag used to target enemies
     [SerializeField] private Transform gimbal;              // rotating part of the turret
     [SerializeField] private float turnSpeed = 10f;         // how fast the turret turns
-    [SerializeField] private LineRenderer laser;            // laser beam
     [SerializeField] private Transform firePoint;           // where the bullet shoots from
     [SerializeField] private GameObject bulletPrefab;       // the bullet
 
@@ -74,7 +72,7 @@ public class Turret : MonoBehaviour
     private void Shoot()
     {
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation) as GameObject;  // spawns bullet
-        Bullet bullet = bulletGO.GetComponent<Bullet>();                                                        // gets Bullet script
+        SingleGunBullet bullet = bulletGO.GetComponent<SingleGunBullet>();                                      // gets Bullet script
 
         if (bullet != null)                                                                                     // can now access target with Seek() function
         {
