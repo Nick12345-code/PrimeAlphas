@@ -22,16 +22,19 @@ public class Selling : MonoBehaviour
                     {
                         Destroy(hit.collider.gameObject);
                         Energy.energy += 20;
+                        Spawning.towerAmount -= 1;
                     }
                     else if (hit.collider.name == "Big_Gun(Clone)")
                     {
                         Destroy(hit.collider.gameObject);
                         Energy.energy += 50;
+                        Spawning.towerAmount -= 1;
                     }
                     else if (hit.collider.name == "Dual_Gun(Clone)")
                     {
                         Destroy(hit.collider.gameObject);
                         Energy.energy += 70;
+                        Spawning.towerAmount -= 1;
                     }
                 }
             } 

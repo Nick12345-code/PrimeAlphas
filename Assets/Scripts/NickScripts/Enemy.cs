@@ -33,13 +33,6 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        transform.position = sendHereFirst.position;
-        Invoke("DestroyEnemy", 2);      
-    }
-
-    public void DestroyEnemy()
-    {
-        print("Enemy Killed!");
         if (Energy.energy < Energy.maxEnergy)
         {
             Energy.energy += 10f;

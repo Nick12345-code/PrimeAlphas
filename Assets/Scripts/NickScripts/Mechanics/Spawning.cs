@@ -8,7 +8,7 @@ public class Spawning : MonoBehaviour
 {
     [Header("Tower")]
     [SerializeField] private Camera cam;
-    [SerializeField] private int towerAmount;
+    public static int towerAmount;
     [SerializeField] private int towerLimit = 10;
     [SerializeField] private GameObject towerHolder;
     [Header("Equipping")]

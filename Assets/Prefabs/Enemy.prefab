@@ -187,9 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zap: {fileID: 1019678713}
-  zapping: 0
   generator: {fileID: 0}
-  drainSpeed: 1
+  drainSpeed: 0.02
 --- !u!1 &1531810050893214109
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +637,7 @@ MonoBehaviour:
   health: 0
   startHealth: 100
   healthBar: {fileID: 1531810051407210276}
+  sendHereFirst: {fileID: 0}
 --- !u!1001 &7909822847416741621
 PrefabInstance:
   m_ObjectHideFlags: 0

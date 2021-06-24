@@ -9,6 +9,9 @@ namespace AIBehaviour
 
     public class EnemySpawning : MonoBehaviour
     {
+        public EnemyAgent agentScript;
+
+        [SerializeField] private int enemyAmount;
 
         [SerializeField] private GameObject enemy;
         [SerializeField] private GameObject enemyOpp;
@@ -32,7 +35,7 @@ namespace AIBehaviour
         // Start is called before the first frame update
         void Start()
         {
-
+            enemyAmount = 0;
         }
 
         // Update is called once per frame
@@ -76,11 +79,13 @@ namespace AIBehaviour
                         GameObject a = Instantiate(enemy, spawnPos.transform.position, Quaternion.identity) as GameObject;
                         a.transform.SetParent(GameObject.Find("Enemies").transform);
                         yield return new WaitForSeconds(spawnRate);
+                        enemyCount++;
                         break;
                     case 2:
                         GameObject b = Instantiate(enemyOpp, spawnPos.transform.position, Quaternion.identity) as GameObject;
                         b.transform.SetParent(GameObject.Find("Enemies").transform);
                         yield return new WaitForSeconds(spawnRate);
+                        enemyCount++;
                         break;
                 }
             }

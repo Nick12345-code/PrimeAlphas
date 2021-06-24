@@ -112,4 +112,4 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 70
   impactEffect: {fileID: 6160459303428081347, guid: 6a6bc5f04ec75f84d8a5b53c0c31af3a, type: 3}
-  damage: 2
+  damage: 5
