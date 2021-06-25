@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
     public GameObject menuCanvas, preludeCanvas, helpPanel, skipButton;
     public GameObject[] preludeImage;
     public TextMeshProUGUI preludeText;
+    [SerializeField]private GameObject helpText;
+    [SerializeField] private GameObject helpText1;
+    [SerializeField] private Button backButton;
+    [SerializeField] private Button nextButton;
+    [SerializeField] private Button startButton;
     private string[] preludeString = new string[3]
     {
         "ELECTRICITY---DIMINISHING------POWER-----\n" +
@@ -35,7 +40,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        //SceneManager.LoadScene("Level v2");
+        SceneManager.LoadScene("Game");
     }
 
     public void Help() // Loads level one when "LEVEL 1" is clicked
@@ -49,11 +54,14 @@ public class MainMenu : MonoBehaviour
         Screen.fullScreen = !Screen.fullScreen;
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+    //public void QuitGame()
+    //{
+    //    Application.Quit();
+    //}
     
+    /// <summary>
+    /// Activates the canvas containing the prelude and starts a Coroutine
+    /// </summary>
     public void Prelude()
     {
         Debug.Log("Set Prelude Active");
@@ -63,10 +71,25 @@ public class MainMenu : MonoBehaviour
         
 
     }
+    /// <summary>
+    /// Allows you to skip the incoming text
+    /// </summary>
      public void SkipPrelude()
     {
         preludeCanvas.SetActive(false);
         menuCanvas.SetActive(true);
+        helpText.gameObject.SetActive(true);
+        
+    }
+
+    public void NextHelp()
+    {
+        helpText.gameObject.SetActive(false);
+        if (helpText1.gameObject.activeSelf == false)
+        {
+            helpText1.gameObject.SetActive(true);
+        }
+        startButton.gameObject.SetActive(true);
     }
 
     IEnumerator TypingText()
