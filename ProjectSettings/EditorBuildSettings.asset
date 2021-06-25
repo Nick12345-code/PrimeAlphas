@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Thong.unity
+    guid: 7c1079950862d404d9d51cf096c42571
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: a8b03d34fc065c64d929c72ad1c92e55
   - enabled: 1
