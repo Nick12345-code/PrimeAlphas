@@ -29,7 +29,7 @@ public class Energy : MonoBehaviour
         {
             fillColour.color = Color.green;
         }
-        else if (energy <= 50)
+        else if (energy <= 50 && energy > 20)
         {
             fillColour.color = Color.yellow;
         }
