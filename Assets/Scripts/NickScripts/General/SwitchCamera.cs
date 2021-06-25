@@ -17,6 +17,11 @@ public class SwitchCamera : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            NextCamera();
+        }
+
         // sets current camera active and others inactive
         for (int i = 0; i < cameras.Length; i++)
         {
