@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019678712}
   - component: {fileID: 1019678713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Zap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1668470701}
   - component: {fileID: 1668470702}
   - component: {fileID: 7862850058266953091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 1531810050893214081}
   - component: {fileID: 1531810050893214080}
   - component: {fileID: 1531810050893214083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 1531810051407210279}
   - component: {fileID: 1531810051407210277}
   - component: {fileID: 1531810051407210276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 1531810051745194074}
   - component: {fileID: 1531810051745194072}
   - component: {fileID: 1531810051745194075}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 7909822847001057013}
   - component: {fileID: 7909822847001057012}
   - component: {fileID: 6802400001876548803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -689,9 +689,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: 78afd0035b5479a4bb11da3e2da2d029, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7448692774387160878, guid: 78afd0035b5479a4bb11da3e2da2d029, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4209329389563969781, guid: 78afd0035b5479a4bb11da3e2da2d029, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 649150651257136599, guid: 78afd0035b5479a4bb11da3e2da2d029, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78afd0035b5479a4bb11da3e2da2d029, type: 3}
       propertyPath: m_Name
       value: Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78afd0035b5479a4bb11da3e2da2d029, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78afd0035b5479a4bb11da3e2da2d029, type: 3}
